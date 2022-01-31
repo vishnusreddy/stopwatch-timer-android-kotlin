@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private var time = 0.0
     private var lapCount = 0
     private var lapText = ""
+    private var prevTime = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +82,14 @@ class MainActivity : AppCompatActivity() {
         val textView: TextView = TextView(this)
         textView.id = lapCount
         textView.gravity = Gravity.CENTER
-        textView.text = "#$lapCount $lapText"
+        if (lapCount != 1) {
+            var timeForLap = getTimeStringFromDouble(time - prevTime)
+            textView.text = "#$lapCount $lapText       $timeForLap"
+        }
+        else{
+            textView.text = "#$lapCount $lapText"
+        }
+        prevTime = time
         textView.setTextColor(Color.parseColor("#FFFFFF"))
         binding.lapLinearView.addView(textView)
     }
