@@ -48,6 +48,12 @@ class MainActivity : AppCompatActivity() {
             binding.lapButton.visibility = View.VISIBLE
         }
 
+        binding.floatingStartStopButton.setOnClickListener {
+            startStopTimer()
+            binding.resetButton.visibility = View.VISIBLE
+            binding.lapButton.visibility = View.VISIBLE
+        }
+
         binding.resetButton.setOnClickListener {
             Handler(Looper.getMainLooper()).postDelayed({
                 /* Create an Intent that will start the Menu-Activity. */
@@ -169,6 +175,7 @@ class MainActivity : AppCompatActivity() {
         startService(serviceIntent)
         binding.startStopButton.text = "Stop"
         binding.startStopButton.icon = getDrawable(R.drawable.ic_baseline_pause_24)
+        binding.floatingStartStopButton.setImageDrawable(getDrawable(R.drawable.ic_baseline_pause_24))
         timerStarted = true
     }
 
@@ -176,6 +183,7 @@ class MainActivity : AppCompatActivity() {
         stopService(serviceIntent)
         binding.startStopButton.text = "Start"
         binding.startStopButton.icon = getDrawable(R.drawable.ic_baseline_play_arrow_24)
+        binding.floatingStartStopButton.setImageDrawable(getDrawable(R.drawable.ic_baseline_play_arrow_24))
         timerStarted = false
     }
 }

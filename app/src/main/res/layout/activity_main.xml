@@ -12,7 +12,8 @@
     <ImageView
         android:id="@+id/imageV"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/timeTV"
@@ -31,6 +32,20 @@
         app:layout_constraintVertical_bias="0.448"
         tools:layout_conversion_absoluteHeight="339dp"
         tools:layout_conversion_absoluteWidth="411dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingStartStopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588"
+        app:srcCompat="@drawable/ic_baseline_play_arrow_24" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resetButton"
@@ -82,6 +97,7 @@
         tools:layout_conversion_absoluteWidth="114dp" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="192dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,8 +107,7 @@
             android:id="@+id/lapLinearView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:orientation="vertical"></LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
