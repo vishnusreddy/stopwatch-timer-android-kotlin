@@ -39,33 +39,32 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        binding.resetButton.visibility = View.INVISIBLE
-        binding.lapButton.visibility = View.INVISIBLE
 
-        binding.startStopButton.setOnClickListener {
-            startStopTimer()
-            binding.resetButton.visibility = View.VISIBLE
-            binding.lapButton.visibility = View.VISIBLE
-        }
+
+        binding.floatingResetButton.visibility = View.INVISIBLE
+        binding.floatingLapButton.visibility = View.INVISIBLE
 
         binding.floatingStartStopButton.setOnClickListener {
             startStopTimer()
-            binding.resetButton.visibility = View.VISIBLE
-            binding.lapButton.visibility = View.VISIBLE
+            binding.floatingResetButton.visibility = View.VISIBLE
+            binding.floatingLapButton.visibility = View.VISIBLE
         }
 
-        binding.resetButton.setOnClickListener {
+        binding.floatingResetButton.setOnClickListener {
             Handler(Looper.getMainLooper()).postDelayed({
                 /* Create an Intent that will start the Menu-Activity. */
                 resetTimer()
             }, 100)
             stopTimer()
             resetTimer()
-            binding.resetButton.visibility = View.INVISIBLE
-            binding.lapButton.visibility = View.INVISIBLE
+            binding.floatingResetButton.visibility = View.INVISIBLE
+            binding.floatingLapButton.visibility = View.INVISIBLE
         }
 
-        binding.lapButton.setOnClickListener {
+
+
+
+        binding.floatingLapButton.setOnClickListener {
             lapTime()
         }
 
@@ -173,16 +172,12 @@ class MainActivity : AppCompatActivity() {
     private fun startTimer() {
         serviceIntent.putExtra(TimerService.TIME_EXTRA, time)
         startService(serviceIntent)
-        binding.startStopButton.text = "Stop"
-        binding.startStopButton.icon = getDrawable(R.drawable.ic_baseline_pause_24)
         binding.floatingStartStopButton.setImageDrawable(getDrawable(R.drawable.ic_baseline_pause_24))
         timerStarted = true
     }
 
     private fun stopTimer() {
         stopService(serviceIntent)
-        binding.startStopButton.text = "Start"
-        binding.startStopButton.icon = getDrawable(R.drawable.ic_baseline_play_arrow_24)
         binding.floatingStartStopButton.setImageDrawable(getDrawable(R.drawable.ic_baseline_play_arrow_24))
         timerStarted = false
     }

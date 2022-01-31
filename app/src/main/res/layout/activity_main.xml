@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222831"
+    android:background="#212121"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -39,62 +39,44 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
+        android:backgroundTint="#14FFEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588"
+        app:layout_constraintVertical_bias="0.736"
         app:srcCompat="@drawable/ic_baseline_play_arrow_24" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/resetButton"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingResetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="reset"
-
-        app:backgroundTint="#00ADB5"
-        app:icon="@drawable/ic_baseline_replay_24"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:backgroundTint="#14FFEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676"
-        tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="112dp" />
+        app:layout_constraintVertical_bias="0.736"
+        app:srcCompat="@drawable/ic_baseline_replay_24" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/startStopButton"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingLapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        app:backgroundTint="#00ADB5"
-        app:icon="@drawable/ic_baseline_play_arrow_24"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:backgroundTint="#14FFEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676"
-        tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="114dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/lapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lap"
-        app:backgroundTint="#00ADB5"
-        app:icon="@drawable/ic_baseline_schedule_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676"
-        tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="114dp" />
+        app:layout_constraintVertical_bias="0.74"
+        app:srcCompat="@drawable/ic_baseline_schedule_24" />
 
     <ScrollView
         android:id="@+id/scrollView2"
